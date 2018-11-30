@@ -1,0 +1,25 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "577fe6869b9722ae99b9aa232cca4b3ead18c422a88c81b665e3b051783c6135"
+        },
+        "pipfile-spec": 6,
+        "requires": {},
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.python.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "youtube-dl": {
+            "hashes": [
+                "sha256:4a789f65b931e421fd24513fd5355310fbba787985a0465e0f9de75ec41e59b8"
+            ],
+            "version": "==2018.3.3"
+        }
+    },
+    "develop": {}
+}

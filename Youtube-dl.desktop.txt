@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=~/git/youtube-sound-dl/youtube-sound-dl
+Icon=~/git/youtube-sound-dl/favicon_48-vflVjB_Qk.png
+Terminal=false
+Type=Application
+Categories=Multimedia;
+StartupNotify=true
+Name[es_ES]=Youtube-dl
+GenericName[es_ES]=Youtube-dl
+Comment[es_ES]=Descarga sonido m4a de vídeos de youtube
+
