@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-BASE_DIR="$(realpath "$(dirname $0)")"
+BASE_DIR="$(realpath "$(dirname "$0")")"
 OUTPUT_DIR=~/syncthing/Musica-noobi
-LOGFILE=$(basename $0 .py).$(date -Is).log
+LOGFILE=$(basename "$0" .py).$(date -Is).log
 if which pluma >/dev/null
 then
     EDITOR=pluma
@@ -11,13 +11,13 @@ fi
 
 
 SOUND_URLS_FILE=$(tempfile --suffix .txt) || exit
-trap "rm -f -- '$SOUND_URLS_FILE'" EXIT
+trap 'rm -f -- "$SOUND_URLS_FILE"' EXIT
 
 
 "$EDITOR" "$SOUND_URLS_FILE"
 
 cd "$BASE_DIR"
-exec > $LOGFILE 2>&1
+exec > "$LOGFILE" 2>&1
 cat "$SOUND_URLS_FILE"
 
 pipenv install youtube-dl
@@ -27,7 +27,7 @@ pipenv run youtube-dl \
     --extract-audio \
     --format m4a \
     --batch-file "$SOUND_URLS_FILE" \
-    -o "$OUTPUT_DIR"/"%(title)s-%(id)s.%(ext)s" \
+    -o "$OUTPUT_DIR/%(title)s-%(id)s.%(ext)s" \
     --verbose
 
 xdg-open "$OUTPUT_DIR"
